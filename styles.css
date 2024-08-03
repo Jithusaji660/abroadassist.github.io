@@ -1,0 +1,306 @@
+/*body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #2a88e6;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+main {
+  padding: 40px;
+}
+
+.hero {
+  text-align: center;
+}
+
+.popular-destinations {
+  /* Add styling for popular destinations */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/*log/reg
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ddeaec; /* Light gray background 
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #a9fadb; /* White container 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #4CAF50; /* Green 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+<style> 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e9dede;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #444;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat-icon {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+/*welcome
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  }
+  
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: #fff;
+  padding: 15px 20px;
+  }
+  
+  header h1 {
+  margin: 0;
+  font-size: 24px;
+  }
+  
+  nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  }
+  
+  nav ul li {
+  margin-left: 20px;
+  }
+  
+  nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #84878a;
+  border-radius: 4px;
+  }
+  
+  nav ul li a:hover {
+  background-color: #7d838a;
+  }
+  
+  main {
+  padding: 20px;
+  }
+  
+  .welcome {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  }
+  
+  .welcome h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #acc4db;
+  }
+  
+  .welcome p {
+  font-size: 18px;
+  margin: 10px 0;
+  }
+  
+  .welcome a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #a3aeb9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  }
+  
+  .welcome a:hover {
+  background-color: #788fa7;
+  }
+  
+  footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #a8cef5;
+  color: #fff;
+  }
+  
+</style>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abroadassist</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            animation: fadeInBody 1.5s ease-in-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #00bcd4, #00796b);
+            color: #ffffff;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+            animation: fadeInHeader 1s ease-in-out;
+        }
+
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            animation: slideInRight 1.5s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        nav ul li {
+            margin-left: 10px;
+            animation: fadeInNavItems 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInNavItems {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav ul li:nth-child(1) { animation-delay: 0.1s; }
+        nav ul li:nth-child(2) { animation-delay: 0.2s; }
+        nav ul li:nth-child(3) { animation-delay: 0.3s; }
+        nav ul li:nth-child(4) { animation-delay: 0.4s; }
+        nav ul li:nth-child(5) { animation-delay: 0.5s; }
+        nav ul li:nth-child(6) { animation-delay: 0.6s; }
+        nav ul li:nth-child(7) { animation-delay: 0.7s; }
+        nav ul li:nth-child(8) { animation-delay: 0.8s; }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #e64a19;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background: linear-gradient(135deg, #00bcd4, #00796b);
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInDropdown 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInDropdown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #00796b;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #004d40;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00bcd4, #00796b);
+            color: #ffffff;
+            text-align: center;
+            padding: 150px 50px;
+            animation: fadeInHero 2s ease-in-out;
+        }
+
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #00796b;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #f5f5f5;
+            color: #00bcd4;
+            transform: scale(1.1);
+        }
+
+        .login-registration-container {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none;
+            padding: 20px;
+            z-index: 1000;
+            animation: fadeInContainer 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-registration-container h3 {
+            margin-top: 0;
+        }
+
+        .login-registration-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-registration-container input[type="text"],
+        .login-registration-container input[type="password"],
+        .login-registration-container input[type="email"] {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-registration-container button {
+            padding: 10px;
+            background-color: #00bcd4;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .login-registration-container button:hover {
+            background-color: #0097a7;
+            transform: scale(1.1);
+        }
+
+        .popular-destinations {
+            padding: 20px;
+            text-align: center;
+            animation: fadeInSection 2s ease-in-out;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact {
+            padding: 20px;
+            text-align: center;
+            animation: fadeInSection 2s ease-in-out;
+        }
+
+        .chat-icon, .form-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00bcd4;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .form-icon {
+            bottom: 60px;
+        }
+
+        .chat-icon:hover, .form-icon:hover {
+            background-color: #00796b;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(135deg, #00bcd4, #00796b);
+            color: #ffffff;
+            animation: fadeInFooter 2s ease-in-out;
+        }
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .dropdown-menu {
+                display: flex;
+            }
+
+            .login-registration-container {
+                width: 90%;
+                right: 5%;
+                top: 80px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Abroadassist</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="http://localhost/ha/about.php">About</a></li>
+                    <li><a href="http://localhost/ha/universities.php">Universities</a></li>
+                    <li><a href="http://localhost/ha/admin_login.php">Admin login</a></li>
+                    <li><a href="http://localhost/ha/admin_register.php">Adm Reg</a></li>
+                    <li><a href="http://localhost/ha/contact.php">Contact</a></li>
+                    <li><a href="http://localhost/ha/login.php">Login</a></li>
+                    <li><a href="http://localhost/ha/register.php">Register</a></li>
+                    <li><a href="http://localhost/ha/university_register.php">University reg</a></li>
+                    <li><a href="http://localhost/ha/university_login.php">University login</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="#">Home</a>
+                    <a href="http://localhost/ha/about.php">About</a>
+                    <a href="http://localhost/ha/universities.php">Universities</a>
+                    <a href="http://localhost/ha/admin_login.php">Admin login</a>
+                    <a href="http://localhost/ha/admin_register.php">Adm Reg</a></li>
+                    <a href="http://localhost/ha/contact.php">Contact</a>
+                    <a href="http://localhost/ha/login.php">Login</a>
+                    <a href="http://localhost/ha/register.php">Register</a>
+                    <a href="http://localhost/ha/university_register.php">University reg</a>
+                    <a href="http://localhost/ha/university_login.php">University login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>Your Journey Abroad Starts Here</h2>
+                <p>Find your perfect study abroad experience.</p>
+                <button>Search Now</button>
+            </section>
+            
+            <section class="popular-destinations">
+                <h2>Popular Destinations</h2>
+                <!-- Add content here -->
+            </section>
+
+            <section class="contact">
+                <?php include('contact.php'); ?>
+            </section>
+        </div>
+    </main>
+
+    <a href="https://www.instagram.com/your_instagram_id/" class="chat-icon" target="_blank">&#9993;</a>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; Abroadassist</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdown-menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        function toggleForm() {
+            var formContainer = document.getElementById("loginRegistrationContainer");
+            if (formContainer.style.display === "block") {
+                formContainer.style.display = "none";
+            } else {
+                formContainer.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
